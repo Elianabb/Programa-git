@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro Diario de Recolección de Leche</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 5px;
+        }
+
+        input {
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 8px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Página con Logo</title>
+</head>
+<body>
+    <header>
+        <img src="LOG.jpg" alt="Logo de la página" style="width: 150px; height: auto;">
+    </header> <h1>AGROVET</h1>
+       
+</body>
+</html>
+    <header>
+        <nav>
+            <h1>Bienvenidos</h1>
+            <ul>
+                <li><a href="#">INICIO</a></li>
+                <li><a href="#">REGISTRARSE</a></li>
+                <li><a href="#"> REGISTRO DE RECOLECCION</a></li>
+                <li><a href="#">CONTACTOS</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+    
+        <h2>Registro Diario de Recolección de Leche</h2>
+        <form id="lecheForm">
+            <label for="fecha">Fecha:</label>
+            <input type="date" id="fecha" required>
+            <label for="litros">Litros Recolectados:</label>
+            <input type="number" id="litros" min="0" required>
+            <button type="submit">Agregar Registro</button>
+        <link rel="stylesheet" href="style.css">
+        
+        </form>
+        <table id="tablaRegistros">
+            <thead>
+                <tr>
+                    <th>Fecha</th>
+                    <th>Litros Recolectados</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Aquí se agregarán los registros -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        const lecheForm = document.getElementById('lecheForm');
+        const tablaRegistros = document.getElementById('tablaRegistros');
+        
+        lecheForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const fecha = document.getElementById('fecha').value;
+            const litros = document.getElementById('litros').value;
+            
+            if (!fecha || !litros) {
+                alert('Por favor, completa todos los campos.');
+                return;
+            }
+            
+            agregarRegistro(fecha, litros);
+            lecheForm.reset();
+        });
+        
+        function agregarRegistro(fecha, litros) {
+            const tableRef = tablaRegistros.getElementsByTagName('tbody')[0];
+            const newRow = tableRef.insertRow();
+            
+            const cellFecha = newRow.insertCell(0);
+            const cellLitros = newRow.insertCell(1);
+            
+            cellFecha.textContent = fecha;
+            cellLitros.textContent = litros;
+        }
+    </script>
+</body>
+</html>
+
+
+
